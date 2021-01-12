@@ -27,24 +27,22 @@ def eval():
     count = 0
     acc = 0
     for i in range(len(preds)-1):
-        print('预测值是%.2f,真实值是%.2f'  % (
-        preds[i][0] * (close_max - close_min) + close_min, labels[i] * (close_max - close_min) + close_min))
-
-
-    #     print("%.2f" % preds[i][0],end=", ")
-    #     if(preds[i][0]>0):
-    #         print("预测会涨", end=", ")
-    #     else:
-    #         print("预测会跌", end=", ")
-    #     if(labels[i]==1.0):
-    #         print("实际涨了")
-    #     else:
-    #         print("实际跌了")
-    #     if((preds[i][0]>0 and labels[i]==1.0) or(preds[i][0]<0 and labels[i]==-1.0)):
-    #         acc+=1
-    #     count+=1
-    # print(acc,count)
-    # print("实际预测准确率{0}%".format(acc*1.0/count*100))
+        # print('预测值是%.2f,真实值是%.2f'  % (
+        # preds[i][0] * (close_max - close_min) + close_min, labels[i] * (close_max - close_min) + close_min))
+        print("%.2f" % preds[i][0],end=", ")
+        if(preds[i][0]>0):
+            print("预测会涨", end=", ")
+        else:
+            print("预测会跌", end=", ")
+        if(labels[i]==1.0):
+            print("实际涨了")
+        else:
+            print("实际跌了")
+        if((preds[i][0]>0 and labels[i]==1.0) or(preds[i][0]<0 and labels[i]==-1.0)):
+            acc+=1
+        count+=1
+    print(acc,count)
+    print("实际预测准确率{0}%".format(acc*1.0/count*100))
         
         
 

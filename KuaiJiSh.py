@@ -4,7 +4,7 @@ from __future__ import (absolute_import, division, print_function,
 import datetime  # For datetime objects
 import backtrader as bt
 import pandas as pd
-from Strategy import TestStrategy
+import Strategy as st
 
 
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     cerebro = bt.Cerebro()
 
     # Add a strategy
-    cerebro.addstrategy(TestStrategy.TestStrategy)
+    cerebro.addstrategy(st.TestStrategy)
 
     datapath = './data/KuaiJSH_601579_2019to2020.csv'
 

@@ -26,6 +26,7 @@ if __name__ == '__main__':
     )    
     # Add the Data Feed to Cerebro
     cerebro.adddata(data)
+    cerebro.adddata(data)
 
     # Set our desired cash start
     cerebro.broker.setcash(10000.0)
@@ -47,4 +48,4 @@ if __name__ == '__main__':
     print('结束资金: %.2f ,总共盈亏 %.2f' % (cerebro.broker.getvalue(), cerebro.broker.getvalue()-startValue))
 
     # Plot the result
-    cerebro.plot()
+    # cerebro.plot()

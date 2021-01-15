@@ -25,13 +25,13 @@ def getData(corpusFile,sequence_length,batchSize):
     Y = []
     for i in range(df.shape[0] - sequence):
         X.append(np.array(df.iloc[i:(i + sequence), ].values, dtype=np.float32))
-        # if (df.iloc[(i + sequence), 3]>df.iloc[(i + sequence-1), 3]):
-        #     updown = 1.0
-        # else:
-        #     updown = -1.0
-        # Y.append(np.array([df.iloc[(i + sequence), 3],updown], dtype=np.float32))
+        if (df.iloc[(i + sequence), 3]>df.iloc[(i + sequence-1), 3]):
+            updown = 1.0
+        else:
+            updown = -1.0
+        Y.append(np.array([df.iloc[(i + sequence), 3],updown], dtype=np.float32))
         # Y.append(np.array(updown, dtype=np.float32))
-        Y.append(np.array(df.iloc[(i + sequence), 3], dtype=np.float32))
+        # Y.append(np.array(df.iloc[(i + sequence), 3], dtype=np.float32))
 
     # 构建batch
     total_len = len(Y)

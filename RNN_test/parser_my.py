@@ -9,6 +9,7 @@ parser.add_argument('--corpusFile', default='../data/KuaiJSH_601579_2019to2020.c
 # TODO 常改动参数
 parser.add_argument('--gpu', default=0, type=int) # gpu 卡号
 parser.add_argument('--epochs', default=1000, type=int) # 训练轮数
+parser.add_argument('--saveepochs', default=100, type=int) # 训练几轮之后对模型保存
 parser.add_argument('--layers', default=2, type=int) # LSTM层数
 parser.add_argument('--input_size', default=5, type=int) #输入特征的维度
 parser.add_argument('--hidden_size', default=32, type=int) #隐藏层的维度

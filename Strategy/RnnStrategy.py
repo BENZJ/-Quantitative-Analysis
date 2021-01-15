@@ -27,8 +27,6 @@ class RnnStrategy(bt.Strategy):
     def next(self):
         """在这里写每日策略，回测的时候每一条数据都会进入一遍
         # TODO 通过RNN返回结果预测明日股票涨跌，如果涨则买入
-        # ? 1.基本策略：1.持有不超过3天 2.如果涨幅大于10%则卖出 3.如果跌幅超过10%则卖出
-
         """        
         pass
     # def prenext(self):

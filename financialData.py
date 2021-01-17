@@ -26,7 +26,7 @@ def get_interst(stock: str = "600004") -> float:
     url = f"https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/{stock}/ctrl/{year_list[0]}/displaytype/4.phtml"
     r = requests.get(url)
     temp_df = pd.read_html(r.text)[12].iloc[:, :-1]
-    return(temp_df.iloc[2,1])
+    return(float(temp_df.iloc[2,1]))
 
 def get_name(stoke_code):
     '''通过股票代码导出公司名称'''
@@ -45,7 +45,7 @@ for i in tqdm(range( len(df))):
     price = float(ts.get_realtime_quotes(df[i].split('.')[0])['price'][0])
     if price==0:
         continue
-    intrest = float(get_interst(code))
+    intrest = get_interst(code)
     new=pd.DataFrame({'股票代码':code,
                   '股票名称':get_name(code),
                   '当前价格':price,

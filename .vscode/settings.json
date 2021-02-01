@@ -1,6 +1,9 @@
 {
     "python.pythonPath": "/usr/local/bin/python3",
-    "code-runner.executorMap": {
-        "python": "$pythonPath -u $fullFileName",
-    },
+    
+    // 通过这条python.autoComplete.extraPaths,python.analysis.extraPaths来添加包内文件的编辑器提示
+    "python.autoComplete.extraPaths":["${workspaceFolder}/RNN_test"],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/RNN_test"
+    ],
 }

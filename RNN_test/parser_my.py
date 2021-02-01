@@ -3,7 +3,7 @@ import torch
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--corpusFile', default='../data/KuaiJSH_601579_2019to2020.csv')
+parser.add_argument('--corpusFile', default='../data/sh_clean.csv')
 
 
 # TODO 常改动参数

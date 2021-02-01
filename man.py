@@ -6,7 +6,7 @@ import sys  # To find out the script name (in argv[0])
 
 # Import the backtrader platform
 import backtrader as bt
-from Strategy import TestStrategy
+import Strategy as st
 
 
 # Create a Stratey
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     cerebro = bt.Cerebro()
 
     # Add a strategy
-    cerebro.addstrategy(TestStrategy.TestStrategy)
+    cerebro.addstrategy(st.TestStrategy)
     
     # Datas are in a subfolder of the samples. Need to find where the script is
     # because it could have been called from anywhere

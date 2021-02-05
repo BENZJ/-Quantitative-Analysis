@@ -3,3 +3,5 @@
 __pycache__
 sh.csv
 sh_clean.csv
+data/sh.csv
+data/sh_clean.csv

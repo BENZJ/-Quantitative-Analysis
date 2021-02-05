@@ -9,6 +9,14 @@ def train():
 
     model = lstm(input_size=args.input_size, hidden_size=args.hidden_size, num_layers=args.layers , output_size=1, dropout=args.dropout, batch_first=args.batch_first )
     model.to(args.device)
+
+    # 是否需要继续训练
+    if args.useGPU:
+        checkpoint = torch.load(args.save_file)
+    else:
+        checkpoint = torch.load(args.save_file,map_location=lambda storage, loc: storage)
+    model.load_state_dict(checkpoint['state_dict'])
+
     criterion = nn.MSELoss()  # 定义损失函数
     # optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)  # Adam梯度下降  学习率=0.001
     optimizer = torch.optim.RMSprop(model.parameters(), lr=args.lr)

@@ -16,8 +16,8 @@ def eval():
     preds = []
     labels = []
     close_max, close_min, train_loader, test_loader = getData(args.corpusFile, args.sequence_length, args.batch_size)
-    for idx, (x, label) in enumerate(test_loader):
-    # for idx, (x, label) in enumerate(train_loader):
+    # for idx, (x, label) in enumerate(test_loader):
+    for idx, (x, label) in enumerate(train_loader):
         if args.useGPU:
             x = x.squeeze(1).cuda()  # batch_size,seq_len,input_size
         else:
